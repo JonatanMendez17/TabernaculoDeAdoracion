@@ -6,13 +6,35 @@ function toggleMenu(id){
   else el.style.display = 'block';
 }
 
-// For header menu on index page
+// For header menu on all pages
 document.addEventListener('DOMContentLoaded', function(){
   var menuBtn = document.getElementById('menuToggle');
   if(menuBtn) menuBtn.addEventListener('click', function(){
     var nav = document.getElementById('mainNav');
     if(!nav) return;
-    nav.style.display = nav.style.display === 'block' ? '' : 'block';
+    nav.classList.toggle('active');
+  });
+  
+  // Close menu when clicking on a link (mobile)
+  var navLinks = document.querySelectorAll('.main-nav a');
+  navLinks.forEach(function(link){
+    link.addEventListener('click', function(){
+      var nav = document.getElementById('mainNav');
+      if(nav && window.innerWidth <= 860){
+        nav.classList.remove('active');
+      }
+    });
+  });
+  
+  // Close menu when clicking outside (mobile)
+  document.addEventListener('click', function(e){
+    var nav = document.getElementById('mainNav');
+    var menuBtn = document.getElementById('menuToggle');
+    if(nav && menuBtn && window.innerWidth <= 860){
+      if(!nav.contains(e.target) && !menuBtn.contains(e.target)){
+        nav.classList.remove('active');
+      }
+    }
   });
 
   // Simple contact form submission (no backend) - shows success message
