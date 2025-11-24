@@ -22,7 +22,7 @@
   </header>
 
   <main>
-    <section class="hero small" style="background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&h=1080&fit=crop')">
+    <section class="hero small" data-bg="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&h=1080&fit=crop">
       <div class="hero-inner container">
         <h1>Contactanos</h1>
         <p>¿Necesitas ayuda? Escríbenos.</p>
@@ -57,8 +57,8 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-logo">
-        <img src="Imagenes/Logo_TDA.jpg" alt="Tabernáculo de Adoración" class="footer-logo-img">
-        <p>Tabernáculo de Adoración<br/>Casa de Oración</p>
+        <img src="Imagenes/Logo_TDA.png" alt="Tabernáculo de Adoración" class="footer-logo-img">
+        <p class="footer-tagline">Tabernáculo de Adoración<br/>Casa de Oración</p>
         <div class="socials">
           <a href="#" class="social-link" aria-label="Instagram">
             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -72,21 +72,38 @@
           </a>
         </div>
       </div>
+      <div class="footer-contact">
+        <h4 class="footer-section-title">Contacto</h4>
+        <div class="footer-contact-item">
+          <svg class="footer-icon-small" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          <a href="mailto:hola@info.com">hola@info.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg class="footer-icon-small" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          <a href="tel:+54123456789">+54 123 456 789</a>
+        </div>
+      </div>
       <div class="footer-location">
-        <h4>
+        <h4 class="footer-section-title">
           <svg class="footer-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
           </svg>
           Ubicación
         </h4>
-        <p>Recreo, Santa Fe, Argentina<br/>(Juan Bautista Alberdi y San Juan)</p>
+        <p class="footer-location-text">Recreo, Santa Fe, Argentina<br/>Juan Bautista Alberdi y San Juan</p>
       </div>
-      <div>
-        <h4>Contacto</h4>
-        <p>hola@info.com<br/>+54 123 456 789</p>
+      <div class="footer-map">
+        <h4 class="footer-section-title">Ubicación en el mapa</h4>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3367.5!2d-60.732!3d-31.049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDAyJzU2LjQiUyA2MMKwNDMnNTUuMiJX!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar&q=Juan+Bautista+Alberdi+y+San+Juan,+Recreo,+Santa+Fe,+Argentina" width="100%" height="200" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
-    <div class="copyright">copyright 2024. Todos los derechos reservados.</div>
+    <div class="copyright">© 2024 Tabernáculo de Adoración. Todos los derechos reservados.</div>
   </footer>
 
   <script src="js/scripts.js"></script>

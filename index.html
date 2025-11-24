@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Tabernáculo de Adoración - Inicio</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Allura&family=Satisfy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="site-header">
@@ -22,7 +22,7 @@
   </header>
 
   <main>
-    <section class="hero" style="background-image: url('Imagenes/Home-portada.jpg')">
+    <section class="hero" data-bg="Imagenes/Home-portada.jpg">
       <div class="hero-inner container">
         <p class="eyebrow">CASA DE ORACIÓN | ARGENTINA</p>
         <h1 class="hero-title">Tabernáculo de adoración</h1>
@@ -38,49 +38,55 @@
         </div>
         <div class="about-text">
           <p>El Tabernáculo de Adoración nace con el propósito de crear un ambiente de gloria por medio de la Adoración e Intercesión continua, hasta que se manifieste el Reino de Dios y su voluntad se establezca en la tierra, así como lo es en el cielo.</p>
-          <a class="btn-read-more" href="sobre.html">LEER MAS</a>
+          <a class="btn-read-more" href="sobre.html">Más información</a>
         </div>
       </div>
     </section>
 
-    <section class="construction container">
-      <h2 class="construction-title">CONSTRUCCIÓN DEL COMPLEJO CASA DE ORACIÓN</h2>
-      <div class="construction-content">
-        <div class="video-container">
-          <div class="video-player">
-            <div class="video-header">
-              <div class="video-header-left">
-                <span class="video-icon">☰</span>
-                <span class="video-label">Video Placeholder</span>
-              </div>
-              <div class="video-header-right">
-                <span class="video-action">Ver más ta...</span>
-                <span class="video-action">Compartir</span>
+    <section class="construction-cta">
+      <div class="construction-background" data-bg="Imagenes/contruccion.jpg" data-gradient="rgba(75,15,55,0.75),rgba(122,27,89,0.75)"></div>
+      <div class="container construction-inner">
+        <div class="construction-content">
+          <h2 class="construction-title">Construcción del Complejo Casa de Oración</h2>
+          <div class="construction-grid">
+            <div class="video-container">
+              <div class="video-player">
+                <div class="video-header">
+                  <div class="video-header-left">
+                    <span class="video-icon">▶</span>
+                    <span class="video-label">Video de Construcción</span>
+                  </div>
+                  <div class="video-header-right">
+                    <span class="video-action">Compartir</span>
+                  </div>
+                </div>
+                <div class="video-content" data-bg="Imagenes/contruccion.jpg">
+                  <div class="video-placeholder">
+                    <div class="play-button"></div>
+                    <span class="video-text">Reproducir Video</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="video-content">
-              <div class="video-placeholder">
-                <span class="video-text">Choose</span>
-                <div class="play-button"></div>
-                <span class="video-text">r video</span>
+            <div class="construction-text-side">
+              <p class="construction-description">En Santa Fe, se levanta la Casa de Oración, un proyecto que busca unir a la comunidad en torno a valores de fe y solidaridad, promoviendo la paz espiritual y el respeto en la diversidad.</p>
+              <div class="construction-cta-text">
+                <p>Desde aqui podes realizar y colaboracion</p>
+                <a class="btn-construction" href="#colaborar">COLABORAR</a>
               </div>
             </div>
+
           </div>
-        </div>
-        <div class="construction-text">
-          <p>En Santa Fe, se levanta la Casa de Oración, un proyecto que busca unir a la comunidad en torno a valores de fe y solidaridad, promoviendo la paz espiritual y el respeto en la diversidad.</p>
-          <a class="btn-collaborate" href="#colaborar">COLABORAR</a>
         </div>
       </div>
     </section>
 
     <section class="events container">
-      <h2 class="events-title">EVENTOS</h2>
       <div class="events-content">
         <div class="events-main">
           <h3 class="events-heading">De Santa Fe, Argentina<br/>a las Naciones</h3>
           <div class="events-image-container">
-            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop" alt="Persona en oración" class="events-main-image">
+            <img src="Imagenes/naciones.jpg" alt="Persona en oración" class="events-main-image">
             <div class="impact-box">
               <h4 class="impact-title">NUESTRO IMPACTO</h4>
               <p class="impact-text">Influir en la forma en que las personas, las organizaciones y los movimientos piensan y actúan.</p>
@@ -88,7 +94,7 @@
           </div>
         </div>
         <div class="events-sidebar">
-          <div class="quote-box">
+          <div class="quote-box" data-bg="Imagenes/adoracionn.jpg" data-gradient="rgba(0,0,0,0.5),rgba(0,0,0,0.5)">
             <p class="quote-text">"Quédense quietos, reconozcan que yo soy Dios. ¡Yo seré exaltado entre las naciones! ¡Yo seré enaltecido en la tierra!"</p>
             <p class="quote-reference">Salmo 46:10</p>
           </div>
@@ -122,7 +128,8 @@
     </section>
 
     <section class="ministries container">
-      <h2>Ministerios</h2>
+      <h2 class="ministerios-title">MINISTERIOS</h2>
+
       <div class="cards">
         <article class="card">
           <img src="Imagenes/ej.jpg" alt="Esencia">
@@ -144,7 +151,7 @@
     </section>
 
     <section class="donate-cta">
-      <div class="donate-background"></div>
+      <div class="donate-background" data-bg="Imagenes/ayuda.jpg" data-gradient="rgba(75,15,55,0.75),rgba(122,27,89,0.75)"></div>
       <div class="container donate-inner">
         <div class="donate-content">
           <h2 class="donate-title">Ayudanos a recaudar para nuestras causas humanitarias</h2>
@@ -159,8 +166,8 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-logo">
-        <img src="Imagenes/Logo_TDA.jpg" alt="Tabernáculo de Adoración" class="footer-logo-img">
-        <p>Tabernáculo de Adoración<br/>Casa de Oración</p>
+        <img src="Imagenes/Logo_TDA.png" alt="Tabernáculo de Adoración" class="footer-logo-img">
+        <p class="footer-tagline">Tabernáculo de Adoración<br/>Casa de Oración</p>
         <div class="socials">
           <a href="#" class="social-link" aria-label="Instagram">
             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -174,21 +181,35 @@
           </a>
         </div>
       </div>
-      <div class="footer-location">
-        <h4>
-          <svg class="footer-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+      <div class="footer-contact">
+        <h4 class="footer-section-title">Contacto</h4>
+        <div class="footer-contact-item">
+          <svg class="footer-icon-small" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
           </svg>
-          Ubicación
-        </h4>
-        <p>Recreo, Santa Fe, Argentina<br/>(Juan Bautista Alberdi y San Juan)</p>
+          <a href="mailto:hola@info.com">hola@info.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg class="footer-icon-small" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          <a href="tel:+54123456789">+54 123 456 789</a>
+        </div>
+        <br>
+        <div class="footer-location">
+          <h4 class="footer-section-title">
+            Ubicación
+          </h4>
+          <p class="footer-location-text">Recreo, Santa Fe, Argentina<br/>Juan Bautista Alberdi y San Juan</p>
+        </div>
       </div>
-      <div>
-        <h4>Contacto</h4>
-        <p>hola@info.com<br/>+54 123 456 789</p>
+      <div class="footer-map">
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3367.5!2d-60.732!3d-31.049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDAyJzU2LjQiUyA2MMKwNDMnNTUuMiJX!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar&q=Juan+Bautista+Alberdi+y+San+Juan,+Recreo,+Santa+Fe,+Argentina" width="100%" height="200" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
-    <div class="copyright">copyright 2024. Todos los derechos reservados.</div>
+    <div class="copyright">© Tabernáculo de Adoración. Todos los derechos reservados.</div>
   </footer>
 
   <script src="js/scripts.js"></script>

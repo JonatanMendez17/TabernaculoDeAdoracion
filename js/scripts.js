@@ -6,8 +6,27 @@ function toggleMenu(id){
   else el.style.display = 'block';
 }
 
+// Apply background images from data-bg attributes
+function applyBackgroundImages(){
+  var elements = document.querySelectorAll('[data-bg]');
+  elements.forEach(function(el){
+    var bgImage = el.getAttribute('data-bg');
+    var gradient = el.getAttribute('data-gradient');
+    if(bgImage){
+      if(gradient){
+        el.style.backgroundImage = 'linear-gradient(' + gradient + '),url(' + bgImage + ')';
+      } else {
+        el.style.backgroundImage = 'url(' + bgImage + ')';
+      }
+    }
+  });
+}
+
 // For header menu on all pages
 document.addEventListener('DOMContentLoaded', function(){
+  // Apply background images from data attributes
+  applyBackgroundImages();
+  
   var menuBtn = document.getElementById('menuToggle');
   if(menuBtn) menuBtn.addEventListener('click', function(){
     var nav = document.getElementById('mainNav');
