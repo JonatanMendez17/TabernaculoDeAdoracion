@@ -71,8 +71,13 @@
             <div class="construction-text-side">
               <p class="construction-description">En Santa Fe, se levanta la Casa de Oración, un proyecto que busca unir a la comunidad en torno a valores de fe y solidaridad, promoviendo la paz espiritual y el respeto en la diversidad.</p>
               <div class="construction-cta-text">
+<<<<<<< Updated upstream
                 <p>Desde aqui podes realizar y colaboracion</p>
                 <a class="btn-construction" href="#colaborar">COLABORAR</a>
+=======
+                <p>Desde aquí puedes realizar tu colaboración</p>
+                <button class="btn btn--white" id="btnColaborar" type="button">COLABORAR</button>
+>>>>>>> Stashed changes
               </div>
             </div>
 
@@ -156,7 +161,11 @@
         <div class="donate-content">
           <h2 class="donate-title">Ayudanos a recaudar para nuestras causas humanitarias</h2>
           <p class="donate-description">Contribuye con una ofrenda y sé parte del impacto. Tu generosidad transforma vidas y construye un futuro mejor para nuestra comunidad.</p>
+<<<<<<< Updated upstream
           <a class="btn-donate" href="contacto.html#donar">Donar</a>
+=======
+          <button class="btn btn--white" id="btnDonar" type="button">Donar</button>
+>>>>>>> Stashed changes
         </div>
       </div>
     </section>
@@ -212,6 +221,291 @@
     <div class="copyright">© Tabernáculo de Adoración. Todos los derechos reservados.</div>
   </footer>
 
+<<<<<<< Updated upstream
   <script src="js/scripts.js"></script>
+=======
+  <!-- Modales de Pago -->
+  <!-- Modal Colaborar -->
+  <div class="modal" id="modalColaborar" role="dialog" aria-labelledby="modalColaborarTitle" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalColaborarTitle">Colaborar con la Construcción</h2>
+        <p class="modal-subtitle">Elige tu método de colaboración</p>
+      </div>
+      <div class="modal-tabs">
+        <button class="modal-tab active" data-tab="tarjeta">
+          <i class="fas fa-credit-card"></i> Tarjeta
+        </button>
+        <button class="modal-tab" data-tab="transferencia">
+          <i class="fas fa-university"></i> Transferencia
+        </button>
+        <button class="modal-tab" data-tab="email">
+          <i class="fas fa-envelope"></i> Contacto
+        </button>
+      </div>
+      <div class="modal-content">
+        <!-- Pestaña Tarjeta -->
+        <div class="modal-tab-content active" id="tab-tarjeta">
+          <form class="payment-form" id="formColaborarTarjeta">
+            <div class="form-group">
+              <label for="colaborar-monto">Monto a colaborar *</label>
+              <div class="amount-input">
+                <span class="currency">$</span>
+                <input type="number" id="colaborar-monto" name="monto" min="1" step="0.01" placeholder="0.00" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="colaborar-nombre">Nombre en la tarjeta *</label>
+              <input type="text" id="colaborar-nombre" name="nombre" placeholder="Juan Pérez" required>
+            </div>
+            <div class="form-group">
+              <label for="colaborar-tarjeta">Número de tarjeta *</label>
+              <input type="text" id="colaborar-tarjeta" name="tarjeta" placeholder="1234 5678 9012 3456" maxlength="19" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="colaborar-vencimiento">Vencimiento *</label>
+                <input type="text" id="colaborar-vencimiento" name="vencimiento" placeholder="MM/AA" maxlength="5" required>
+              </div>
+              <div class="form-group">
+                <label for="colaborar-cvv">CVV *</label>
+                <input type="text" id="colaborar-cvv" name="cvv" placeholder="123" maxlength="4" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="colaborar-email-tarjeta">Email para recibir comprobante *</label>
+              <input type="email" id="colaborar-email-tarjeta" name="email" placeholder="tu@email.com" required>
+            </div>
+            <button type="submit" class="btn btn--full">Procesar Pago</button>
+            <p class="form-note"><i class="fas fa-lock"></i> Tu información está protegida</p>
+          </form>
+        </div>
+        <!-- Pestaña Transferencia -->
+        <div class="modal-tab-content" id="tab-transferencia">
+          <div class="transfer-info">
+            <h3>Datos para Transferencia Bancaria</h3>
+            <div class="transfer-details">
+              <div class="transfer-item">
+                <span class="transfer-label">Banco:</span>
+                <span class="transfer-value">Banco de Santa Fe</span>
+                <button class="btn-copy" data-copy="Banco de Santa Fe" aria-label="Copiar">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+              <div class="transfer-item">
+                <span class="transfer-label">CBU:</span>
+                <span class="transfer-value">1234567890123456789012</span>
+                <button class="btn-copy" data-copy="1234567890123456789012" aria-label="Copiar">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+              <div class="transfer-item">
+                <span class="transfer-label">Alias:</span>
+                <span class="transfer-value">TABERNACULO.ADORACION</span>
+                <button class="btn-copy" data-copy="TABERNACULO.ADORACION" aria-label="Copiar">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+              <div class="transfer-item">
+                <span class="transfer-label">Titular:</span>
+                <span class="transfer-value">Tabernáculo de Adoración</span>
+                <button class="btn-copy" data-copy="Tabernáculo de Adoración" aria-label="Copiar">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <form class="transfer-form" id="formColaborarTransferencia">
+              <div class="form-group">
+                <label for="colaborar-monto-transferencia">Monto transferido *</label>
+                <div class="amount-input">
+                  <span class="currency">$</span>
+                  <input type="number" id="colaborar-monto-transferencia" name="monto" min="1" step="0.01" placeholder="0.00" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="colaborar-email-transferencia">Email para confirmación *</label>
+                <input type="email" id="colaborar-email-transferencia" name="email" placeholder="tu@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="colaborar-comprobante">Número de comprobante (opcional)</label>
+                <input type="text" id="colaborar-comprobante" name="comprobante" placeholder="Número de operación">
+              </div>
+              <button type="submit" class="btn btn--full">Enviar Confirmación</button>
+            </form>
+          </div>
+        </div>
+        <!-- Pestaña Email -->
+        <div class="modal-tab-content" id="tab-email">
+          <form class="contact-form-modal" id="formColaborarEmail">
+            <div class="form-group">
+              <label for="colaborar-nombre-email">Nombre completo *</label>
+              <input type="text" id="colaborar-nombre-email" name="nombre" placeholder="Juan Pérez" required>
+            </div>
+            <div class="form-group">
+              <label for="colaborar-email-contacto">Email *</label>
+              <input type="email" id="colaborar-email-contacto" name="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="colaborar-telefono-email">Teléfono (opcional)</label>
+              <input type="tel" id="colaborar-telefono-email" name="telefono" placeholder="+54 123 456 789">
+            </div>
+            <div class="form-group">
+              <label for="colaborar-mensaje-email">Mensaje *</label>
+              <textarea id="colaborar-mensaje-email" name="mensaje" rows="5" placeholder="Cuéntanos cómo te gustaría colaborar..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--full">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Donar -->
+  <div class="modal" id="modalDonar" role="dialog" aria-labelledby="modalDonarTitle" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalDonarTitle">Donar a Causas Humanitarias</h2>
+        <p class="modal-subtitle">Elige tu método de donación</p>
+      </div>
+      <div class="modal-tabs">
+        <button class="modal-tab active" data-tab="tarjeta">
+          <i class="fas fa-credit-card"></i> Tarjeta
+        </button>
+        <button class="modal-tab" data-tab="transferencia">
+          <i class="fas fa-university"></i> Transferencia
+        </button>
+        <button class="modal-tab" data-tab="email">
+          <i class="fas fa-envelope"></i> Contacto
+        </button>
+      </div>
+      <div class="modal-content">
+        <!-- Pestaña Tarjeta -->
+        <div class="modal-tab-content active" id="tab-tarjeta-donar">
+          <form class="payment-form" id="formDonarTarjeta">
+            <div class="form-group">
+              <label for="donar-monto">Monto a donar *</label>
+              <div class="amount-input">
+                <span class="currency">$</span>
+                <input type="number" id="donar-monto" name="monto" min="1" step="0.01" placeholder="0.00" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="donar-nombre">Nombre en la tarjeta *</label>
+              <input type="text" id="donar-nombre" name="nombre" placeholder="Juan Pérez" required>
+            </div>
+            <div class="form-group">
+              <label for="donar-tarjeta">Número de tarjeta *</label>
+              <input type="text" id="donar-tarjeta" name="tarjeta" placeholder="1234 5678 9012 3456" maxlength="19" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="donar-vencimiento">Vencimiento *</label>
+                <input type="text" id="donar-vencimiento" name="vencimiento" placeholder="MM/AA" maxlength="5" required>
+              </div>
+              <div class="form-group">
+                <label for="donar-cvv">CVV *</label>
+                <input type="text" id="donar-cvv" name="cvv" placeholder="123" maxlength="4" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="donar-email-tarjeta">Email para recibir comprobante *</label>
+              <input type="email" id="donar-email-tarjeta" name="email" placeholder="tu@email.com" required>
+            </div>
+            <button type="submit" class="btn btn--full">Procesar Donación</button>
+            <p class="form-note"><i class="fas fa-lock"></i> Tu información está protegida</p>
+          </form>
+        </div>
+        <!-- Pestaña Transferencia -->
+        <div class="modal-tab-content" id="tab-transferencia-donar">
+          <div class="transfer-info">
+            <h3>Datos para Transferencia Bancaria</h3>
+            <div class="transfer-details">
+              <div class="transfer-item">
+                <span class="transfer-label">Banco:</span>
+                <span class="transfer-value">Banco de Santa Fe</span>
+                <button class="btn-copy" data-copy="Banco de Santa Fe" aria-label="Copiar">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+              <div class="transfer-item">
+                <span class="transfer-label">CBU:</span>
+                <span class="transfer-value">1234567890123456789012</span>
+                <button class="btn-copy" data-copy="1234567890123456789012" aria-label="Copiar">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+              <div class="transfer-item">
+                <span class="transfer-label">Alias:</span>
+                <span class="transfer-value">TABERNACULO.ADORACION</span>
+                <button class="btn-copy" data-copy="TABERNACULO.ADORACION" aria-label="Copiar">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+              <div class="transfer-item">
+                <span class="transfer-label">Titular:</span>
+                <span class="transfer-value">Tabernáculo de Adoración</span>
+                <button class="btn-copy" data-copy="Tabernáculo de Adoración" aria-label="Copiar">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <form class="transfer-form" id="formDonarTransferencia">
+              <div class="form-group">
+                <label for="donar-monto-transferencia">Monto transferido *</label>
+                <div class="amount-input">
+                  <span class="currency">$</span>
+                  <input type="number" id="donar-monto-transferencia" name="monto" min="1" step="0.01" placeholder="0.00" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="donar-email-transferencia">Email para confirmación *</label>
+                <input type="email" id="donar-email-transferencia" name="email" placeholder="tu@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="donar-comprobante">Número de comprobante (opcional)</label>
+                <input type="text" id="donar-comprobante" name="comprobante" placeholder="Número de operación">
+              </div>
+              <button type="submit" class="btn btn--full">Enviar Confirmación</button>
+            </form>
+          </div>
+        </div>
+        <!-- Pestaña Email -->
+        <div class="modal-tab-content" id="tab-email-donar">
+          <form class="contact-form-modal" id="formDonarEmail">
+            <div class="form-group">
+              <label for="donar-nombre-email">Nombre completo *</label>
+              <input type="text" id="donar-nombre-email" name="nombre" placeholder="Juan Pérez" required>
+            </div>
+            <div class="form-group">
+              <label for="donar-email-contacto">Email *</label>
+              <input type="email" id="donar-email-contacto" name="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="donar-telefono-email">Teléfono (opcional)</label>
+              <input type="tel" id="donar-telefono-email" name="telefono" placeholder="+54 123 456 789">
+            </div>
+            <div class="form-group">
+              <label for="donar-mensaje-email">Mensaje *</label>
+              <textarea id="donar-mensaje-email" name="mensaje" rows="5" placeholder="Cuéntanos cómo te gustaría donar..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--full">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/dataconfig.js"></script>
+  <script src="js/modules/backgrounds.js"></script>
+  <script src="js/modules/header.js"></script>
+  <script src="js/modules/events.js"></script>
+  <script src="js/modules/ministries.js"></script>
+  <script src="js/modules/modals.js"></script>
+>>>>>>> Stashed changes
 </body>
 </html>
