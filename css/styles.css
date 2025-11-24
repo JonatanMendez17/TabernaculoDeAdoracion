@@ -105,7 +105,7 @@ img{max-width:100%;height:auto;display:block}
 .events-list{list-style:none;padding:0;margin:0}
 .event-item{display:flex;align-items:center;gap:12px;padding:15px 0;border-bottom:1px solid #eee;color:#555;font-size:14px}
 .event-item:last-child{border-bottom:none}
-.event-icon{font-size:16px;color:#4b0f37}
+.event-icon{font-size:16px;color:#4b0f37;width:20px;text-align:center;display:inline-block}
 .event-date{font-weight:600;color:#4b0f37}
 .event-name{color:#666}
 
@@ -189,10 +189,13 @@ img{max-width:100%;height:auto;display:block}
 .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1.3fr;gap:40px;align-items:start}
 .footer-logo-img{height:55px;width:auto;margin-bottom:18px;display:block; }
 .footer-tagline{font-size:15px;font-weight:500;margin:0 0 25px 0;opacity:0.95;line-height:1.6;letter-spacing:0.3px}
-.socials{display:flex;gap:12px;align-items:center}
-.social-link{display:flex;align-items:center;justify-content:center;width:42px;height:42px;background:rgba(255,255,255,0.12);border-radius:50%;transition:all 0.3s;text-decoration:none}
-.social-link:hover{background:rgba(255,255,255,0.25);transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,0,0,0.2)}
-.social-icon{width:22px;height:22px;fill:#fff}
+.socials{display:flex;flex-direction:column;gap:15px}
+.socials-title{font-size:14px;font-weight:600;margin:0 0 12px 0;letter-spacing:0.5px;text-transform:uppercase;opacity:0.95;font-family:'Montserrat',sans-serif}
+.socials-list{display:flex;flex-direction:column;gap:12px}
+.social-link{display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(255,255,255,0.12);border-radius:8px;transition:all 0.3s;text-decoration:none;width:100%;max-width:280px}
+.social-link:hover{background:rgba(255,255,255,0.25);transform:translateX(5px);box-shadow:0 4px 12px rgba(0,0,0,0.2)}
+.social-icon{font-size:20px;color:#fff;flex-shrink:0;width:24px;text-align:center;display:flex;align-items:center;justify-content:center}
+.social-label{font-size:14px;font-weight:500;color:#fff;opacity:0.95;letter-spacing:0.3px}
 .footer-section-title{font-size:16px;font-weight:600;margin:0 0 20px 0;letter-spacing:0.5px;text-transform:uppercase;opacity:0.95;display:flex;align-items:center;gap:10px}
 .footer-icon{width:20px;height:20px;fill:#fff;flex-shrink:0;opacity:0.9}
 .footer-contact-item{display:flex;align-items:center;gap:12px;margin-bottom:15px}
@@ -218,7 +221,10 @@ img{max-width:100%;height:auto;display:block}
   align-items: center;}
 .footer-simple .footer-logo-img{margin:0 auto 15px}
 .footer-simple .footer-tagline{margin-bottom:20px}
-.footer-simple .socials{justify-content:center}
+.footer-simple .socials{justify-content:center;align-items:center}
+.footer-simple .socials-list{width:100%;max-width:100%}
+.footer-simple .social-link{max-width:100%;justify-content:flex-start}
+.footer-simple .socials-title{text-align:center}
 
 /* Utilities */
 .content{padding:60px 0}
@@ -228,13 +234,20 @@ blockquote{border-left:4px solid var(--accent);padding-left:12px;color:#555;font
 .story-img{width:100%;border-radius:8px}
 
 /* Responsive */
-/* Large Tablet and below */
+/* Large Desktop and below */
+@media(max-width:1200px){
+  .container{max-width:100%;padding:0 24px}
+  .hero-title{font-size:85px}
+  .about-quote-text{font-size:52px}
+}
+
+/* Desktop and below */
 @media(max-width:1024px){
   .container{max-width:100%;padding:0 20px;width:100%}
   .hero{min-height:550px;padding:80px 0}
   .hero-inner{padding:35px 20px}
-  .hero-title{font-size:80px}
-  .about-quote-text{font-size:50px}
+  .hero-title{font-size:75px}
+  .about-quote-text{font-size:48px}
   .about-content{gap:50px;width:100%}
   .events-heading{font-size:42px}
   .donate-title{font-size:38px}
@@ -244,6 +257,17 @@ blockquote{border-left:4px solid var(--accent);padding-left:12px;color:#555;font
   .video-content{min-height:350px}
   .events-content{gap:40px;width:100%}
   .footer-grid{gap:35px;width:100%}
+  .contact-grid{gap:40px}
+}
+
+/* Tablet Landscape */
+@media(max-width:900px){
+  .hero-title{font-size:65px}
+  .about-quote-text{font-size:44px}
+  .events-heading{font-size:38px}
+  .construction-title{font-size:34px}
+  .donate-title{font-size:34px}
+  .contact-grid{grid-template-columns:1fr;gap:35px}
 }
 
 /* Tablet */
@@ -304,23 +328,30 @@ blockquote{border-left:4px solid var(--accent);padding-left:12px;color:#555;font
   .map-container{width:100%}
 }
 
-/* Mobile and Tablet */
+/* Mobile Landscape and Tablet Portrait */
 @media(max-width:860px){
   .container{padding:0 18px}
   
   /* Header */
   .logo-img{height:60px}
-  .main-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--accent-dark);flex-direction:column;padding:20px;box-shadow:0 4px 10px rgba(0,0,0,0.2);z-index:100}
-  .main-nav.active{display:flex}
-  .main-nav a{margin:0;padding:12px;display:block;border-bottom:1px solid rgba(255,255,255,0.1);text-align:left;font-size:15px}
+  .site-header{position:sticky;top:0;z-index:1000}
+  .main-nav{display:none;position:fixed;top:104px;left:0;right:0;background:var(--accent-dark);flex-direction:column;padding:20px;box-shadow:0 4px 10px rgba(0,0,0,0.2);z-index:999;max-height:calc(100vh - 104px);overflow-y:auto;transition:transform 0.3s ease}
+  .main-nav.active{display:flex;animation:slideDown 0.3s ease}
+  .main-nav a{margin:0;padding:12px;display:block;border-bottom:1px solid rgba(255,255,255,0.1);text-align:left;font-size:15px;transition:background 0.2s}
+  .main-nav a:hover{background:rgba(255,255,255,0.1)}
   .main-nav a:last-child{border-bottom:none}
-  .menu-toggle{display:block}
+  .menu-toggle{display:flex;align-items:center;justify-content:center}
+  
+  @keyframes slideDown{
+    from{opacity:0;transform:translateY(-10px)}
+    to{opacity:1;transform:translateY(0)}
+  }
   
   /* Hero */
-  .hero{min-height:500px;padding:60px 0}
-  .hero-inner{padding:30px 20px}
-  .hero-title{font-size:48px;margin:8px 0}
-  .hero-sub{font-size:14px;margin-top:20px;padding:0 10px}
+  .hero{min-height:500px;padding:60px 0;background-attachment:scroll}
+  .hero-inner{padding:30px 20px;text-align:center}
+  .hero-title{font-size:48px;margin:8px 0;line-height:1.1}
+  .hero-sub{font-size:14px;margin-top:20px;padding:0 10px;max-width:100%}
   .eyebrow{font-size:11px;margin-bottom:12px}
   
   /* About */
@@ -336,31 +367,32 @@ blockquote{border-left:4px solid var(--accent);padding-left:12px;color:#555;font
   /* Construction CTA */
   .construction-cta{padding:60px 0;min-height:400px}
   .construction-content{padding:0 15px}
-  .construction-title{font-size:28px;margin-bottom:30px;line-height:1.2}
+  .construction-title{font-size:28px;margin-bottom:30px;line-height:1.2;text-align:center}
   .construction-grid{grid-template-columns:1fr;gap:30px;text-align:center}
-  .construction-text-side{text-align:center;align-items:center;gap:25px}
-  .construction-description{font-size:15px;text-align:center;max-width:100%}
-  .construction-cta-text{font-size:15px;margin:25px 0;padding:0 10px}
+  .construction-text-side{text-align:center;align-items:center;gap:25px;width:100%}
+  .construction-description{font-size:15px;text-align:center;max-width:100%;line-height:1.7}
+  .construction-cta-text{font-size:15px;margin:25px 0;padding:0 10px;width:100%}
   .construction-cta-text p{margin:0 0 20px 0}
-  .video-container{max-width:100%;margin:0 auto}
+  .video-container{max-width:100%;margin:0 auto;width:100%}
   .video-content{min-height:300px}
   .video-text{font-size:16px}
   .play-button{border-left:35px solid #fff;border-top:22px solid transparent;border-bottom:22px solid transparent}
-  .btn-construction{padding:14px 30px;font-size:13px;width:100%;max-width:280px;justify-content:center}
+  .btn-construction{padding:14px 30px;font-size:13px;width:100%;max-width:280px;justify-content:center;margin:0 auto}
   
   /* Events */
   .events{padding:60px 0}
   .events-content{grid-template-columns:1fr;gap:40px}
   .events-heading{font-size:32px;margin-bottom:20px;text-align:center;line-height:1.2}
-  .events-main-image{height:350px;width:100%}
-  .impact-box{position:relative;bottom:auto;right:auto;max-width:100%;margin-top:20px;padding:20px 25px;text-align:left}
+  .events-main-image{height:350px;width:100%;object-fit:cover}
+  .impact-box{position:relative;bottom:auto;right:auto;max-width:100%;margin-top:20px;padding:20px 25px;text-align:left;width:100%}
   .impact-title{font-size:11px}
-  .impact-text{font-size:15px}
+  .impact-text{font-size:15px;line-height:1.6}
   .quote-box{padding:25px;min-height:180px}
   .quote-text{font-size:15px;line-height:1.6}
   .quote-reference{font-size:13px}
-  .latest-events-title{font-size:24px;text-align:left}
-  .event-item{font-size:13px;padding:12px 0;flex-wrap:wrap}
+  .latest-events-title{font-size:24px;text-align:left;margin-bottom:20px}
+  .event-item{font-size:13px;padding:12px 0;flex-wrap:wrap;gap:10px;align-items:center}
+  .event-item .event-icon{flex-shrink:0}
   
   /* Ministries */
   .ministries{padding:50px 0}
@@ -381,45 +413,52 @@ blockquote{border-left:4px solid var(--accent);padding-left:12px;color:#555;font
   /* Footer */
   .site-footer{padding:40px 0 15px}
   .footer-grid{grid-template-columns:1fr;gap:35px;text-align:center}
-  .footer-logo{display:flex;flex-direction:column;align-items:center}
+  .footer-logo{display:flex;flex-direction:column;align-items:center;width:100%}
   .footer-logo-img{height:50px;margin:0 auto 18px}
-  .footer-tagline{margin-bottom:20px;text-align:center}
-  .footer-section-title{justify-content:center;font-size:15px;margin-bottom:18px;text-align:center}
-  .footer-contact{display:flex;flex-direction:column;align-items:center;gap:15px}
-  .footer-contact-item{justify-content:center;flex-wrap:wrap;text-align:center}
-  .footer-location{text-align:center;margin-top:15px}
+  .footer-tagline{margin-bottom:20px;text-align:center;width:100%}
+  .footer-section-title{justify-content:center;font-size:15px;margin-bottom:18px;text-align:center;width:100%}
+  .footer-contact{display:flex;flex-direction:column;align-items:center;gap:15px;width:100%}
+  .footer-contact-item{justify-content:center;flex-wrap:wrap;text-align:center;width:100%}
+  .footer-location{text-align:center;margin-top:15px;width:100%}
   .footer-location-text{text-align:center}
-  .socials{justify-content:center;margin-top:10px}
+  .socials{justify-content:center;margin-top:10px;align-items:center;width:100%}
+  .socials-list{width:100%;max-width:100%}
+  .social-link{max-width:100%;justify-content:center;text-align:center}
+  .socials-title{text-align:center;width:100%}
   .footer-map{width:100%;max-width:100%}
   .footer-map h4{text-align:center;margin-bottom:15px}
   .map-container{width:100%;max-width:100%}
-  .map-container iframe{height:250px;width:100%}
-  .copyright{margin-top:35px;padding-top:20px;font-size:12px;text-align:center}
+  .map-container iframe{height:250px;width:100%;border-radius:8px}
+  .copyright{margin-top:35px;padding-top:20px;font-size:12px;text-align:center;width:100%}
   
   /* Utilities */
   .two-col{grid-template-columns:1fr;gap:25px}
   .story{grid-template-columns:1fr;gap:25px}
   .contact-section{padding:60px 0}
-  .contact-intro{margin-bottom:40px}
-  .contact-section-title{font-size:32px}
-  .contact-intro-text{font-size:15px}
+  .contact-intro{margin-bottom:40px;text-align:center}
+  .contact-section-title{font-size:32px;text-align:center}
+  .contact-intro-text{font-size:15px;text-align:center}
   .contact-grid{grid-template-columns:1fr;gap:35px}
-  .contact-form-wrapper{padding:30px 25px}
+  .contact-form-wrapper{padding:30px 25px;width:100%}
   .contact-form-title{font-size:24px;margin-bottom:25px}
   .form-row{grid-template-columns:1fr;gap:15px}
-  .contact-info-card{padding:30px 25px}
+  .contact-info-card{padding:30px 25px;width:100%}
   .contact-info-title{font-size:22px;margin-bottom:20px}
-  .contact-map-card{padding:25px}
+  .contact-map-card{padding:25px;width:100%}
   .map-title{font-size:20px;margin-bottom:15px}
   .content{padding:50px 0}
   .ministries-list{padding:50px 0}
-  .ministries-detailed{gap:25px}
-  .ministry-card{grid-template-columns:1fr;gap:0}
+  .ministries-detailed{gap:25px;width:100%}
+  .ministry-card{grid-template-columns:1fr;gap:0;width:100%}
   .ministry-image{min-height:170px;width:100%}
-  .ministry-content{padding:20px 15px}
+  .ministry-content{padding:20px 15px;width:100%}
   .ministry-content h3{font-size:20px;margin-bottom:10px}
   .ministry-description{font-size:13px;margin-bottom:10px}
   .ministry-details{font-size:12px}
+  
+  /* Improve touch targets */
+  .btn,.btn-contact,.btn-donate,.btn-construction,.btn-read-more{min-height:44px;min-width:44px}
+  .menu-toggle{min-width:44px;min-height:44px}
 }
 
 /* Small Mobile */
@@ -429,6 +468,8 @@ blockquote{border-left:4px solid var(--accent);padding-left:12px;color:#555;font
   /* Header */
   .logo-img{height:50px}
   .site-header{padding:10px 0}
+  .header-inner{gap:10px}
+  .main-nav{top:90px;max-height:calc(100vh - 90px)}
   
   /* Hero */
   .hero{min-height:400px;padding:40px 0}
@@ -477,8 +518,10 @@ blockquote{border-left:4px solid var(--accent);padding-left:12px;color:#555;font
   .quote-text{font-size:14px;line-height:1.6}
   .quote-reference{font-size:12px}
   .latest-events-title{font-size:20px;text-align:left}
-  .event-item{font-size:12px;padding:10px 0;flex-wrap:wrap;gap:8px}
-  .event-icon{font-size:14px}
+  .event-item{font-size:12px;padding:10px 0;flex-wrap:wrap;gap:8px;align-items:flex-start}
+  .event-icon{font-size:14px;margin-top:2px}
+  .event-date{font-weight:600}
+  .event-name{flex:1;min-width:0}
   
   /* Ministries */
   .ministries{padding:40px 0}
@@ -506,6 +549,10 @@ blockquote{border-left:4px solid var(--accent);padding-left:12px;color:#555;font
   .map-container{width:100%}
   .map-container iframe{height:220px;width:100%}
   .copyright{font-size:11px;margin-top:30px;padding-top:18px}
+  .socials-title{font-size:13px;margin-bottom:10px}
+  .social-link{padding:8px 12px;max-width:100%}
+  .social-label{font-size:13px}
+  .social-icon{font-size:18px;width:20px}
   
   /* Contact */
   .contact-section{padding:50px 0}

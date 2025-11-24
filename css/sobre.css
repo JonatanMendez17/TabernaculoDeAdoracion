@@ -374,53 +374,96 @@
   .site-footer .copyright{ text-align:center; padding:12px 0 0; font-size:0.85rem; opacity:0.9; }
   
   /* Responsive */
+  @media (max-width:1024px){
+    .historia-body{gap:40px}
+    .section-title{font-size:38px}
+  }
+  
   @media (max-width:900px){
     .historia{padding:60px 0}
-    .section-title{font-size:32px;margin-bottom:30px}
+    .section-title{font-size:32px;margin-bottom:30px;text-align:center}
     .historia-body{grid-template-columns:1fr;gap:30px}
-    .historia-image{position:relative;top:0}
-    .historia-image img{height:300px;width:100%}
+    .historia-image{position:relative;top:0;width:100%}
+    .historia-image img{height:300px;width:100%;object-fit:cover}
+    .historia-text{width:100%}
     .mision-vision{padding:60px 0}
     .mision-vision-grid{grid-template-columns:1fr;gap:30px}
-    .llama-oscura{padding:70px 0}
-    .llama-text{max-width:100%;text-align:center;padding:40px 20px}
-    .llama-text h3{font-size:28px}
+    .mision-card,.vision-card{width:100%}
+    .llama-oscura{padding:70px 0;background-attachment:scroll}
+    .llama-text{max-width:100%;text-align:center;padding:40px 20px;margin:0 auto}
+    .llama-text h3{font-size:28px;text-align:center}
+    .llama-text p{text-align:center}
     .valores-section{padding:60px 0}
-    .valores-grid{grid-template-columns:1fr;gap:25px}
-    .llamando-generaciones{padding:70px 0}
-    .centered{font-size:28px}
-    .centered-subtitle{font-size:16px;margin-bottom:40px}
-    .quote-box{padding:30px 25px}
-    .quote-text{font-size:20px}
+    .valores-grid{display:grid;grid-template-columns:1fr;gap:25px}
+    .valor-card{width:100%}
+    .llamando-generaciones{padding:70px 0;background-attachment:scroll}
+    .centered{font-size:28px;text-align:center}
+    .centered-subtitle{font-size:16px;margin-bottom:40px;text-align:center}
+    .quote-box{padding:30px 25px;width:100%;max-width:100%}
+    .quote-text{font-size:20px;text-align:center}
+    .quote-reference{text-align:center}
     .info-bloc{padding:60px 0}
     .icons-row{grid-template-columns:1fr;gap:25px}
+    .icon-card{width:100%}
+    .biblical-reference{width:100%}
   }
-  @media (max-width:480px){
+  @media (max-width:768px){
     .historia{padding:50px 0}
-    .section-title{font-size:26px;margin-bottom:25px}
-    .historia-image img{height:250px}
-    .historia-text p{font-size:15px}
-    .historia-text blockquote{font-size:16px;padding-left:15px}
+    .section-title{font-size:28px;margin-bottom:25px;text-align:center}
+    .historia-image img{height:280px}
+    .historia-text p{font-size:15px;text-align:left}
+    .historia-text blockquote{font-size:16px;padding-left:15px;margin:20px 0}
     .mision-vision{padding:50px 0}
-    .mision-card,.vision-card{padding:30px 25px}
-    .mision-card h3,.vision-card h3{font-size:24px}
+    .mision-card,.vision-card{padding:30px 25px;width:100%}
+    .mision-card h3,.vision-card h3{font-size:24px;text-align:center}
+    .mision-card p,.vision-card p{text-align:center}
     .llama-oscura{padding:60px 0}
-    .llama-text{padding:30px 20px}
-    .llama-text h3{font-size:24px;margin-bottom:20px}
-    .llama-text p{font-size:15px}
+    .llama-text{padding:30px 20px;width:100%}
+    .llama-text h3{font-size:24px;margin-bottom:20px;text-align:center}
+    .llama-text p{font-size:15px;text-align:center}
     .valores-section{padding:50px 0}
-    .valor-card{padding:25px 20px}
+    .valor-card{padding:25px 20px;width:100%}
     .valor-card h4{font-size:20px}
     .llamando-generaciones{padding:60px 0}
-    .centered{font-size:24px;margin-bottom:25px}
-    .centered-subtitle{font-size:15px;margin-bottom:30px}
-    .quote-box{padding:25px 20px}
-    .quote-text{font-size:18px}
+    .centered{font-size:24px;margin-bottom:25px;text-align:center;padding:0 15px}
+    .centered-subtitle{font-size:15px;margin-bottom:30px;text-align:center;padding:0 15px}
+    .quote-box{padding:25px 20px;width:100%}
+    .quote-text{font-size:18px;text-align:center}
     .info-bloc{padding:50px 0}
-    .lead{font-size:16px;margin-bottom:30px}
-    .icon-card{padding:25px 20px}
+    .lead{font-size:16px;margin-bottom:30px;text-align:center;padding:0 15px}
+    .icon-card{padding:25px 20px;width:100%}
     .icon-card h4{font-size:20px}
-    .biblical-reference{padding:25px 20px;margin-top:40px}
-    .reference{font-size:18px}
+    .biblical-reference{padding:25px 20px;margin-top:40px;width:100%}
+    .reference{font-size:18px;text-align:center}
+    .reference-verse{text-align:center}
+  }
+  
+  @media (max-width:480px){
+    .historia{padding:40px 0}
+    .section-title{font-size:24px;margin-bottom:20px}
+    .historia-image img{height:220px}
+    .historia-text p{font-size:14px}
+    .historia-text blockquote{font-size:15px;padding-left:12px}
+    .mision-vision{padding:40px 0}
+    .mision-card,.vision-card{padding:25px 20px}
+    .mision-card h3,.vision-card h3{font-size:22px}
+    .llama-oscura{padding:50px 0}
+    .llama-text{padding:25px 15px}
+    .llama-text h3{font-size:22px}
+    .llama-text p{font-size:14px}
+    .valores-section{padding:40px 0}
+    .valor-card{padding:20px 18px}
+    .valor-card h4{font-size:18px}
+    .llamando-generaciones{padding:50px 0}
+    .centered{font-size:22px;margin-bottom:20px;padding:0 10px}
+    .centered-subtitle{font-size:14px;margin-bottom:25px;padding:0 10px}
+    .quote-box{padding:20px 18px}
+    .quote-text{font-size:16px}
+    .info-bloc{padding:40px 0}
+    .lead{font-size:15px;margin-bottom:25px;padding:0 10px}
+    .icon-card{padding:20px 18px}
+    .icon-card h4{font-size:18px}
+    .biblical-reference{padding:20px 18px;margin-top:30px}
+    .reference{font-size:16px}
   }
   
