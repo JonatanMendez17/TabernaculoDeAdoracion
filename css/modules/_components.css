@@ -413,7 +413,6 @@
   }
 }
 
-<<<<<<< HEAD
 /* Modal Styles */
 .modal{
   display:none;
@@ -600,6 +599,23 @@
   outline:none;
   border-color:var(--accent);
 }
+.payment-form textarea,
+.transfer-form textarea{
+  width:100%;
+  padding:12px 15px;
+  border:2px solid #ddd;
+  border-radius:8px;
+  font-size:15px;
+  font-family:var(--font-primary);
+  resize:vertical;
+  min-height:100px;
+  transition:border-color 0.2s;
+}
+.payment-form textarea:focus,
+.transfer-form textarea:focus{
+  outline:none;
+  border-color:var(--accent);
+}
 .payment-form .form-row{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -756,5 +772,3 @@
   }
 }
 
-=======
->>>>>>> Refactory
