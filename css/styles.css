@@ -108,11 +108,23 @@ img{max-width:100%;height:auto;display:block}
 .center{text-align:center;margin-top:18px}
 
 /* Ministries List */
-.ministries-list{padding:60px 0}
+.ministries-list{padding:80px 0}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
 .feature-img{width:100%;border-radius:8px}
 .ministries-list h2{margin-top:0}
 .ministries-list h3{margin-top:24px;color:var(--accent)}
+
+/* Ministries Detailed */
+.ministries-detailed{display:flex;flex-direction:column;gap:20px;max-width:1200px;margin:0 auto}
+.ministry-card{display:grid;grid-template-columns:0.8fr 2fr;gap:20px;align-items:center;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 15px rgba(0,0,0,0.08);transition:transform 0.3s,box-shadow 0.3s}
+.ministry-card:hover{transform:translateY(-3px);box-shadow:0 6px 25px rgba(0,0,0,0.12)}
+.ministry-image{width:100%;height:100%;min-height:160px;overflow:hidden}
+.ministry-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s}
+.ministry-card:hover .ministry-image img{transform:scale(1.05)}
+.ministry-content{padding:20px}
+.ministry-content h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#4b0f37;margin:0 0 10px 0;line-height:1.2}
+.ministry-description{font-size:13px;color:#555;line-height:1.6;margin:0 0 10px 0}
+.ministry-details{font-size:12px;color:#666;line-height:1.5;margin:0;font-style:italic}
 
 /* Donate CTA */
 .donate-cta{position:relative;padding:100px 0;color:#fff;overflow:hidden;min-height:500px;display:flex;align-items:center}
@@ -221,6 +233,13 @@ blockquote{border-left:4px solid var(--accent);padding-left:12px;color:#555;font
   .ministries{padding:60px 0}
   .cards{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
   .card{padding:15px}
+  .ministries-detailed{gap:25px}
+  .ministry-card{grid-template-columns:1fr;gap:0}
+  .ministry-image{min-height:180px}
+  .ministry-content{padding:20px 18px}
+  .ministry-content h3{font-size:22px;margin-bottom:10px}
+  .ministry-description{font-size:13px;margin-bottom:10px}
+  .ministry-details{font-size:12px}
   
   /* Donate */
   .donate-cta{padding:70px 0;min-height:450px}
@@ -331,6 +350,13 @@ blockquote{border-left:4px solid var(--accent);padding-left:12px;color:#555;font
   .contact-grid{grid-template-columns:1fr;gap:25px}
   .content{padding:50px 0}
   .ministries-list{padding:50px 0}
+  .ministries-detailed{gap:25px}
+  .ministry-card{grid-template-columns:1fr;gap:0}
+  .ministry-image{min-height:170px;width:100%}
+  .ministry-content{padding:20px 15px}
+  .ministry-content h3{font-size:20px;margin-bottom:10px}
+  .ministry-description{font-size:13px;margin-bottom:10px}
+  .ministry-details{font-size:12px}
 }
 
 /* Small Mobile */

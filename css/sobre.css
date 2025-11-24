@@ -35,49 +35,7 @@
     font-weight:700;
   }
   
-  /* HERO */
-  .hero{
-    position:relative;
-    min-height:70vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background-size:cover;
-    background-position:center;
-    color:#fff;
-  }
-  .hero-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.55));
-  }
-  .hero-content{
-    position:relative;
-    text-align:left;
-    max-width:900px;
-    padding:40px 20px;
-  }
-  .pretitle{
-    font-size:0.9rem;
-    letter-spacing:0.2em;
-    text-transform:uppercase;
-    opacity:0.9;
-    margin-bottom:8px;
-    color:rgba(255,255,255,0.9);
-    font-weight:600;
-  }
-  
-  /* Título grande con trazo blanco */
-  .hero-title{
-    font-family: "Playfair Display", serif;
-    font-size:5.2rem;
-    line-height:0.9;
-    margin:0;
-    letter-spacing:0.03em;
-    color:transparent;
-    -webkit-text-stroke:2px rgba(255,255,255,0.95); /* contorno */
-    text-shadow: 0 2px 0 rgba(0,0,0,0.2);
-  }
+  /* HERO - Usa los estilos de styles.css */
   
   /* Historia */
   .historia{
@@ -205,7 +163,7 @@
   
   /* Responsive */
   @media (max-width:900px){
-    .hero-title{ font-size:4rem; -webkit-text-stroke:1.6px; }
+    /* Hero responsive - Usa los estilos de styles.css */
     .historia-body{ flex-direction:column; align-items:center; text-align:left; }
     .historia-image img{ width:60%; margin-bottom:18px; }
     .llama-text{ text-align:center; margin-left:0; padding:40px 15px; }
@@ -213,8 +171,6 @@
     /* Header responsive - Usa los estilos de styles.css */
   }
   @media (max-width:480px){
-    .hero-title{ font-size:3rem; -webkit-text-stroke:1.2px; text-align:center; }
-    .hero-content{ text-align:center; padding:24px; }
-    .pretitle{ text-align:center; display:block; }
+    /* Hero responsive - Usa los estilos de styles.css */
   }
   
