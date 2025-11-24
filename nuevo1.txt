@@ -1,0 +1,2 @@
+Limpizar codigo
+Configurar los dos formularios

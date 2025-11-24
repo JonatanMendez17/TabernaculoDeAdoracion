@@ -234,22 +234,70 @@
         e.preventDefault();
         var modal = form.closest('.modal');
         var submitBtn = form.querySelector('button[type="submit"]');
+        var isDonation = form.id.includes('Donar');
         
         if(submitBtn){
           submitBtn.disabled = true;
           submitBtn.textContent = 'Procesando...';
         }
         
-        // Simulate payment processing
-        setTimeout(function(){
+        // Get form data
+        var formData = {
+          tipo: isDonation ? 'Donación' : 'Colaboración Construcción',
+          monto: form.querySelector('input[name="monto"]').value,
+          nombre: form.querySelector('input[name="nombre"]').value.trim(),
+          email: form.querySelector('input[name="email"]').value.trim(),
+          mensaje: form.querySelector('textarea[name="mensaje"]') ? form.querySelector('textarea[name="mensaje"]').value.trim() : ''
+        };
+        
+        // Check if EmailJS is configured
+        if(typeof emailjs === 'undefined' || !EMAILJS_CONFIG || !EMAILJS_CONFIG.publicKey || EMAILJS_CONFIG.publicKey === 'TU_PUBLIC_KEY_AQUI'){
+          showModalMessage(modal, 'El formulario no está configurado correctamente. Por favor contacta al administrador.', 'error');
+          if(submitBtn){
+            submitBtn.disabled = false;
+            submitBtn.textContent = isDonation ? 'Procesar Donación' : 'Procesar Pago';
+          }
+          return;
+        }
+        
+        // Initialize EmailJS if not already done
+        if(EMAILJS_CONFIG.publicKey){
+          emailjs.init(EMAILJS_CONFIG.publicKey);
+        }
+        
+        // Prepare email template parameters
+        var templateParams = {
+          to_email: EMAILJS_CONFIG.recipientEmail,
+          tipo: formData.tipo,
+          monto: '$' + parseFloat(formData.monto).toLocaleString('es-AR', {minimumFractionDigits: 2, maximumFractionDigits: 2}),
+          nombre: formData.nombre,
+          email: formData.email,
+          mensaje: formData.mensaje || 'Sin mensaje adicional',
+          reply_to: formData.email
+        };
+        
+        // Send email using EmailJS
+        emailjs.send(
+          EMAILJS_CONFIG.serviceId,
+          EMAILJS_CONFIG.donationTemplateId,
+          templateParams
+        ).then(function(response){
           showModalMessage(modal, '¡Gracias! Tu pago está siendo procesado. Recibirás un comprobante por email.', 'success');
           form.reset();
           
           if(submitBtn){
             submitBtn.disabled = false;
-            submitBtn.textContent = submitBtn.textContent.includes('Donación') ? 'Procesar Donación' : 'Procesar Pago';
+            submitBtn.textContent = isDonation ? 'Procesar Donación' : 'Procesar Pago';
           }
-        }, 2000);
+        }, function(error){
+          console.error('Error enviando email:', error);
+          showModalMessage(modal, 'Hubo un error al procesar tu pago. Por favor intenta nuevamente o contáctanos directamente.', 'error');
+          
+          if(submitBtn){
+            submitBtn.disabled = false;
+            submitBtn.textContent = isDonation ? 'Procesar Donación' : 'Procesar Pago';
+          }
+        });
       });
     });
     
@@ -260,14 +308,54 @@
         e.preventDefault();
         var modal = form.closest('.modal');
         var submitBtn = form.querySelector('button[type="submit"]');
+        var isDonation = form.id.includes('Donar');
         
         if(submitBtn){
           submitBtn.disabled = true;
           submitBtn.textContent = 'Enviando...';
         }
         
-        // Simulate form submission
-        setTimeout(function(){
+        // Get form data
+        var formData = {
+          tipo: isDonation ? 'Donación - Transferencia' : 'Colaboración Construcción - Transferencia',
+          monto: form.querySelector('input[name="monto"]').value,
+          email: form.querySelector('input[name="email"]').value.trim(),
+          comprobante: form.querySelector('input[name="comprobante"]') ? form.querySelector('input[name="comprobante"]').value.trim() : 'No proporcionado',
+          mensaje: form.querySelector('textarea[name="mensaje"]') ? form.querySelector('textarea[name="mensaje"]').value.trim() : ''
+        };
+        
+        // Check if EmailJS is configured
+        if(typeof emailjs === 'undefined' || !EMAILJS_CONFIG || !EMAILJS_CONFIG.publicKey || EMAILJS_CONFIG.publicKey === 'TU_PUBLIC_KEY_AQUI'){
+          showModalMessage(modal, 'El formulario no está configurado correctamente. Por favor contacta al administrador.', 'error');
+          if(submitBtn){
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Enviar Confirmación';
+          }
+          return;
+        }
+        
+        // Initialize EmailJS if not already done
+        if(EMAILJS_CONFIG.publicKey){
+          emailjs.init(EMAILJS_CONFIG.publicKey);
+        }
+        
+        // Prepare email template parameters
+        var templateParams = {
+          to_email: EMAILJS_CONFIG.recipientEmail,
+          tipo: formData.tipo,
+          monto: '$' + parseFloat(formData.monto).toLocaleString('es-AR', {minimumFractionDigits: 2, maximumFractionDigits: 2}),
+          email: formData.email,
+          comprobante: formData.comprobante,
+          mensaje: formData.mensaje || 'Sin mensaje adicional',
+          reply_to: formData.email
+        };
+        
+        // Send email using EmailJS
+        emailjs.send(
+          EMAILJS_CONFIG.serviceId,
+          EMAILJS_CONFIG.donationTemplateId,
+          templateParams
+        ).then(function(response){
           showModalMessage(modal, '¡Gracias! Hemos recibido tu confirmación. Te contactaremos pronto.', 'success');
           form.reset();
           
@@ -275,7 +363,15 @@
             submitBtn.disabled = false;
             submitBtn.textContent = 'Enviar Confirmación';
           }
-        }, 2000);
+        }, function(error){
+          console.error('Error enviando email:', error);
+          showModalMessage(modal, 'Hubo un error al enviar tu confirmación. Por favor intenta nuevamente o contáctanos directamente.', 'error');
+          
+          if(submitBtn){
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Enviar Confirmación';
+          }
+        });
       });
     });
     

@@ -209,40 +209,76 @@
         submitButton.textContent = 'Enviando...';
       }
       
-      // Simulate form submission (replace with actual API call)
-      setTimeout(function(){
-        // Simulate success
-        var success = Math.random() > 0.1; // 90% success rate for demo
+      // Get form data
+      var formData = {
+        nombre: document.getElementById('nombre').value.trim(),
+        apellido: document.getElementById('apellido').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        telefono: document.getElementById('telefono').value.trim() || 'No proporcionado',
+        mensaje: document.getElementById('mensaje').value.trim()
+      };
+      
+      // Check if EmailJS is configured
+      if(typeof emailjs === 'undefined' || !EMAILJS_CONFIG || !EMAILJS_CONFIG.publicKey || EMAILJS_CONFIG.publicKey === 'TU_PUBLIC_KEY_AQUI'){
+        showMessage('El formulario no está configurado correctamente. Por favor contacta al administrador.', 'error');
+        if(submitButton){
+          submitButton.disabled = false;
+          submitButton.textContent = 'Enviar mensaje';
+        }
+        return;
+      }
+      
+      // Initialize EmailJS if not already done
+      if(EMAILJS_CONFIG.publicKey){
+        emailjs.init(EMAILJS_CONFIG.publicKey);
+      }
+      
+      // Prepare email template parameters
+      var templateParams = {
+        to_email: EMAILJS_CONFIG.recipientEmail,
+        from_name: formData.nombre + ' ' + formData.apellido,
+        from_email: formData.email,
+        telefono: formData.telefono,
+        message: formData.mensaje,
+        reply_to: formData.email
+      };
+      
+      // Send email using EmailJS
+      emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.contactTemplateId,
+        templateParams
+      ).then(function(response){
+        // Success
+        showMessage('¡Gracias! Tu mensaje fue enviado correctamente. Nos comunicaremos contigo pronto.', 'success');
+        form.reset();
         
-        if(success){
-          showMessage('¡Gracias! Tu mensaje fue enviado correctamente. Nos comunicaremos contigo pronto.', 'success');
-          form.reset();
-          
-          // Clear all field errors
-          fields.forEach(function(fieldId){
-            var field = document.getElementById(fieldId);
-            if(field){
-              clearFieldError(field);
-            }
-          });
-          
-          // Reset button after 3 seconds
-          setTimeout(function(){
-            if(submitButton){
-              submitButton.disabled = false;
-              submitButton.textContent = 'Enviar mensaje';
-            }
-          }, 3000);
-        } else {
-          showMessage('Hubo un error al enviar tu mensaje. Por favor intenta nuevamente o contáctanos directamente por teléfono o email.', 'error');
-          
-          // Re-enable button
+        // Clear all field errors
+        fields.forEach(function(fieldId){
+          var field = document.getElementById(fieldId);
+          if(field){
+            clearFieldError(field);
+          }
+        });
+        
+        // Reset button after 3 seconds
+        setTimeout(function(){
           if(submitButton){
             submitButton.disabled = false;
             submitButton.textContent = 'Enviar mensaje';
           }
+        }, 3000);
+      }, function(error){
+        // Error
+        console.error('Error enviando email:', error);
+        showMessage('Hubo un error al enviar tu mensaje. Por favor intenta nuevamente o contáctanos directamente por teléfono o email.', 'error');
+        
+        // Re-enable button
+        if(submitButton){
+          submitButton.disabled = false;
+          submitButton.textContent = 'Enviar mensaje';
         }
-      }, 1500); // Simulate network delay
+      });
     });
   }
   
