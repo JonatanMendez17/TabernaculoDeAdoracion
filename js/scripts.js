@@ -1,11 +1,3 @@
-// Small JS for menu toggle and contact form handling
-function toggleMenu(id){
-  var el = document.getElementById(id);
-  if(!el) return;
-  if(el.style.display === 'block') el.style.display = '';
-  else el.style.display = 'block';
-}
-
 // Apply background images from data-bg attributes
 function applyBackgroundImages(){
   var elements = document.querySelectorAll('[data-bg]');
@@ -124,5 +116,3 @@ function loadEvents(){
     eventsList.appendChild(li);
   });
 }
-
-
