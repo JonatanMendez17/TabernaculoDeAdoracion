@@ -1,0 +1,27 @@
+/* CSS Variables - Design Tokens */
+:root{
+  --accent:#7a1b59; /* purple */
+  --accent-dark:#4b0f37;
+  --muted:#f6f0f2;
+  --text:#333;
+  
+  /* Typography */
+  --font-primary: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --font-heading: 'Playfair Display', serif;
+  --font-script: 'Dancing Script', cursive;
+  
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 18px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-xxl: 60px;
+  
+  /* Breakpoints (for reference) */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+  --bp-large: 1200px;
+}
+

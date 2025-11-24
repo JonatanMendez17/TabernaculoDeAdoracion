@@ -1,0 +1,19 @@
+/* Base Styles - Reset and Global */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  padding:0;
+  font-family: var(--font-primary);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden
+}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 18px;width:100%}
+
+/* Utilities */
+blockquote{border-left:4px solid var(--accent);padding-left:12px;color:#555;font-style:italic;margin:20px 0}
+.center{text-align:center;margin-top:18px}
+
