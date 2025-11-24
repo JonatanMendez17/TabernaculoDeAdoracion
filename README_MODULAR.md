@@ -6,9 +6,6 @@ Este proyecto ha sido modularizado para mejorar la organización, mantenibilidad
 
 ```
 TDA/
-├── components/          # Componentes HTML reutilizables
-│   ├── header.html
-│   └── footer.html
 ├── css/
 │   ├── main.css        # Archivo principal que importa todos los módulos
 │   ├── modules/        # Módulos CSS organizados
@@ -20,13 +17,16 @@ TDA/
 │   │   └── _responsive.css  # Media queries y estilos responsive
 │   └── [todos los estilos están en modules/]
 ├── js/
-│   ├── main.js         # Archivo principal (placeholder)
+│   ├── dataconfig.js   # Configuración centralizada de datos (ministerios y eventos)
 │   ├── modules/        # Módulos JavaScript organizados
 │   │   ├── backgrounds.js   # Aplicar imágenes de fondo desde data-bg
 │   │   ├── header.js        # Funcionalidad del header (menú móvil)
 │   │   ├── events.js        # Carga dinámica de eventos
 │   │   ├── forms.js         # Manejo de formularios
-│   │   └── components.js    # Carga dinámica de componentes HTML
+│   │   ├── ministries.js    # Carga dinámica de ministerios
+│   │   ├── modals.js        # Funcionalidad de modales de pago
+│   │   ├── scroll-to-top.js # Botón para volver arriba
+│   │   └── video.js         # Reproductor de video de construcción
 │   └── [todos los scripts están en modules/]
 └── [páginas HTML]
 ```
@@ -102,9 +102,27 @@ Maneja el formulario de contacto:
 
 ### `ministries.js`
 Carga dinámicamente los ministerios:
-- Define el array `ministriesData` con los ministerios
+- Obtiene datos de `window.ministriesData` desde `dataconfig.js`
 - Renderiza ministerios en `index.html` (versión simple)
 - Renderiza ministerios en `ministerios.html` (versión detallada)
+
+### `modals.js`
+Maneja los modales de pago:
+- Apertura y cierre de modales
+- Cambio de pestañas (tarjeta/transferencia)
+- Formateo de números de tarjeta y fechas
+- Copia al portapapeles de datos bancarios
+- Manejo de formularios de pago
+
+### `scroll-to-top.js`
+Botón para volver arriba:
+- Aparece después de hacer scroll
+- Scroll suave al hacer clic
+
+### `video.js`
+Reproductor de video de construcción:
+- Carga de video de YouTube al hacer clic
+- Conversión automática de URL a formato embed
 
 ## 🔧 Uso
 
@@ -122,9 +140,13 @@ Carga dinámicamente los ministerios:
 <script src="js/modules/header.js"></script>
 
 <!-- Módulos específicos por página -->
+<script src="js/dataconfig.js"></script>         <!-- Solo en index.html y ministerios.html -->
 <script src="js/modules/events.js"></script>      <!-- Solo en index.html -->
 <script src="js/modules/ministries.js"></script>  <!-- Solo en index.html y ministerios.html -->
 <script src="js/modules/forms.js"></script>       <!-- Solo en contacto.html -->
+<script src="js/modules/modals.js"></script>      <!-- Solo en index.html -->
+<script src="js/modules/scroll-to-top.js"></script> <!-- Solo en index.html -->
+<script src="js/modules/video.js"></script>       <!-- Solo en index.html -->
 ```
 
 ## ✨ Ventajas de la Modularización
@@ -138,11 +160,12 @@ Carga dinámicamente los ministerios:
 
 ## 📝 Notas
 
-- **Optimización:** Todos los archivos legacy han sido eliminados
+- **Optimización:** Todos los archivos legacy y no utilizados han sido eliminados
 - Los módulos JavaScript son auto-inicializables (IIFE)
 - Los módulos CSS usan `@import` en `main.css`
 - Cada página carga solo los módulos JavaScript necesarios
 - Los estilos de la página "Nosotros" están integrados en los módulos CSS
+- Los datos de ministerios y eventos están centralizados en `dataconfig.js`
 
 ## 🚀 Próximos Pasos (Opcional)
 
