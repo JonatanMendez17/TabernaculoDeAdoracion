@@ -12,10 +12,14 @@
     
     if(isDetailed){
       // Detailed version for ministerios.html
-      article.innerHTML = 
-        '<div class="ministry-image">' +
+      var imageHTML = '';
+      if(ministry.image && ministry.image.trim() !== ''){
+        imageHTML = '<div class="ministry-image">' +
           '<img src="' + ministry.image + '" alt="' + ministry.imageAlt + '" loading="lazy">' +
-        '</div>' +
+        '</div>';
+      }
+      article.innerHTML = 
+        imageHTML +
         '<div class="ministry-content">' +
           '<h3>' + ministry.title + '</h3>' +
           '<p class="ministry-description">' + ministry.fullDescription + '</p>' +
@@ -23,8 +27,12 @@
         '</div>';
     } else {
       // Simple version for index.html
+      var imageHTML = '';
+      if(ministry.image && ministry.image.trim() !== ''){
+        imageHTML = '<img src="' + ministry.image + '" alt="' + ministry.imageAlt + '" loading="lazy">';
+      }
       article.innerHTML = 
-        '<img src="' + ministry.image + '" alt="' + ministry.imageAlt + '" loading="lazy">' +
+        imageHTML +
         '<h3>' + ministry.title + '</h3>' +
         '<p>' + ministry.description + '</p>';
     }

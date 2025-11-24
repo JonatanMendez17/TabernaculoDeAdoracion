@@ -153,49 +153,65 @@
   letter-spacing:0.3px
 }
 .socials{display:flex;flex-direction:column;gap:15px}
+.site-footer > .socials{
+  max-width:1100px;
+  margin:0 auto;
+  padding:30px 18px 0;
+  width:100%
+}
 .socials-title{
   font-size:14px;
   font-weight:600;
-  margin:0 0 12px 0;
+  margin:0 0 16px 0;
   letter-spacing:0.5px;
   text-transform:uppercase;
   opacity:0.95;
   font-family:var(--font-primary)
 }
-.socials-list{display:flex;flex-direction:column;gap:12px}
+.socials-list{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  width:100%;
+  max-width:100%
+}
 .social-link{
   display:flex;
   align-items:center;
-  gap:12px;
-  padding:10px 14px;
+  gap:10px;
+  padding:10px 12px;
   background:rgba(255,255,255,0.12);
   border-radius:8px;
   transition:all 0.3s;
   text-decoration:none;
   width:100%;
-  max-width:280px
+  min-height:44px;
+  box-sizing:border-box
 }
 .social-link:hover{
   background:rgba(255,255,255,0.25);
-  transform:translateX(5px);
+  transform:translateY(-2px);
   box-shadow:0 4px 12px rgba(0,0,0,0.2)
 }
 .social-icon{
-  font-size:20px;
+  font-size:18px;
   color:#fff;
   flex-shrink:0;
-  width:24px;
+  width:20px;
   text-align:center;
   display:flex;
   align-items:center;
   justify-content:center
 }
 .social-label{
-  font-size:14px;
+  font-size:13px;
   font-weight:500;
   color:#fff;
   opacity:0.95;
-  letter-spacing:0.3px
+  letter-spacing:0.2px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis
 }
 .footer-section-title{
   font-size:16px;

@@ -156,9 +156,22 @@
   .footer-contact-item{justify-content:center;flex-wrap:wrap;text-align:center;width:100%}
   .footer-location{text-align:center;margin-top:15px;width:100%}
   .footer-location-text{text-align:center}
+  .site-footer > .socials{
+    padding:25px 18px 0
+  }
   .socials{justify-content:center;margin-top:10px;align-items:center;width:100%}
-  .socials-list{width:100%;max-width:100%}
-  .social-link{max-width:100%;justify-content:center;text-align:center}
+  .socials-list{
+    width:100%;
+    max-width:100%;
+    grid-template-columns:1fr;
+    gap:8px
+  }
+  .social-link{
+    max-width:100%;
+    justify-content:center;
+    text-align:center;
+    min-height:42px
+  }
   .socials-title{text-align:center;width:100%}
   .footer-map{width:100%;max-width:100%}
   .footer-map h4{text-align:center;margin-bottom:15px}
@@ -261,10 +274,18 @@
   .map-container{width:100%}
   .map-container iframe{height:220px;width:100%}
   .copyright{font-size:11px;margin-top:30px;padding-top:18px}
-  .socials-title{font-size:13px;margin-bottom:10px}
-  .social-link{padding:8px 12px;max-width:100%}
-  .social-label{font-size:13px}
-  .social-icon{font-size:18px;width:20px}
+  .socials-title{font-size:13px;margin-bottom:12px}
+  .socials-list{
+    grid-template-columns:1fr;
+    gap:8px
+  }
+  .social-link{
+    padding:10px 12px;
+    max-width:100%;
+    min-height:42px
+  }
+  .social-label{font-size:12px}
+  .social-icon{font-size:16px;width:18px}
   .contact-section{padding:50px 0}
   .contact-section-title{font-size:28px}
   .contact-intro-text{font-size:14px}

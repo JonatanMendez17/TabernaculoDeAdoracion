@@ -799,7 +799,7 @@
 }
 .valores-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(2,minmax(250px,1fr));
   gap:30px;
   margin-top:50px;
 }
@@ -884,7 +884,7 @@
   color:#666;
   margin-bottom:40px;
   line-height:1.8;
-  text-align:center;
+  text-align:justify;
 }
 .icons-row{
   display:grid;

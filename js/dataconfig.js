@@ -36,6 +36,50 @@
       details: 'A través de actividades prácticas, enseñanza bíblica relevante y mentoría personalizada, equipamos a la próxima generación para que sean agentes de cambio en sus escuelas, familias y comunidades.',
       icon: 'fa-users',
       category: 'jovenes'
+    },
+    {
+      id: 'casa-misericordia',
+      title: 'Casa de Misericordia',
+      image: '',
+      imageAlt: 'Casa de Misericordia',
+      description: 'Servicio y ayuda a quienes más lo necesitan.',
+      fullDescription: 'La Casa de Misericordia es un ministerio dedicado a extender la compasión y el amor de Cristo a través de acciones concretas de servicio. Nos enfocamos en brindar apoyo integral a personas y familias que atraviesan momentos difíciles, ofreciendo recursos, acompañamiento y esperanza.',
+      details: 'Desarrollamos programas de asistencia, acompañamiento espiritual y apoyo práctico para transformar vidas y restaurar esperanza en nuestra comunidad.',
+      icon: 'fa-heart',
+      category: 'social'
+    },
+    {
+      id: 'grupo-jovenes',
+      title: 'Grupo de Jóvenes',
+      image: 'Imagenes/jovenes.jpg',
+      imageAlt: 'Grupo de Jóvenes',
+      description: 'Comunidad de jóvenes unidos en fe y propósito.',
+      fullDescription: 'El Grupo de Jóvenes es un espacio dinámico donde los jóvenes se reúnen para crecer juntos en su relación con Dios, desarrollar amistades significativas y descubrir su propósito. A través de encuentros semanales, actividades recreativas y servicio comunitario, creamos un ambiente donde la fe cobra vida.',
+      details: 'Organizamos reuniones, eventos especiales, retiros y proyectos de servicio que permiten a los jóvenes conectarse, crecer y hacer una diferencia positiva en su entorno.',
+      icon: 'fa-user-friends',
+      category: 'jovenes'
+    },
+    {
+      id: 'grupo-adolescentes',
+      title: 'Grupo de Adolescentes',
+      image: 'Imagenes/adoslescentes.jpg',
+      imageAlt: 'Grupo de Adolescentes',
+      description: 'Un lugar seguro para adolescentes crecer en su fe.',
+      fullDescription: 'El Grupo de Adolescentes está diseñado específicamente para jóvenes en esta etapa crucial de su vida. Ofrecemos un ambiente acogedor donde pueden hacer preguntas, explorar su fe, desarrollar relaciones saludables y encontrar su identidad en Cristo.',
+      details: 'A través de enseñanzas relevantes, actividades dinámicas y mentoría, acompañamos a los adolescentes en su crecimiento espiritual y personal, preparándolos para enfrentar los desafíos de esta etapa con sabiduría y propósito.',
+      icon: 'fa-user-graduate',
+      category: 'jovenes'
+    },
+    {
+      id: 'staff-musicos',
+      title: 'Staff de Músicos',
+      image: 'Imagenes/musicos.jpg',
+      imageAlt: 'Staff de Músicos',
+      description: 'Equipo de adoración y música para la gloria de Dios.',
+      fullDescription: 'El Staff de Músicos es un grupo dedicado de músicos y adoradores que sirven con excelencia y pasión en los tiempos de adoración. Nos comprometemos a crear un ambiente donde la presencia de Dios se manifieste a través de la música y la adoración genuina.',
+      details: 'Trabajamos en equipo para desarrollar habilidades musicales, profundizar en la adoración y servir con integridad, preparando cada presentación como una ofrenda de excelencia para el Señor.',
+      icon: 'fa-music',
+      category: 'adoracion'
     }
   ];
   
