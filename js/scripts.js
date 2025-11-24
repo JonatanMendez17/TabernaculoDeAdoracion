@@ -63,18 +63,32 @@ document.addEventListener('DOMContentLoaded', function(){
       e.preventDefault();
       var nombre = document.getElementById('nombre').value.trim();
       var apellido = document.getElementById('apellido').value.trim();
+      var email = document.getElementById('email');
       var mensaje = document.getElementById('mensaje').value.trim();
       var msgEl = document.getElementById('formMessage');
-      if(!nombre || !apellido || !mensaje){
-        msgEl.textContent = 'Por favor completa todos los campos.';
-        msgEl.style.color = 'crimson';
-        msgEl.style.background = '#ffe6e6';
+      var emailValue = email ? email.value.trim() : '';
+      if(!nombre || !apellido || !mensaje || (email && !emailValue)){
+        msgEl.textContent = 'Por favor completa todos los campos requeridos.';
+        msgEl.style.color = '#fff';
+        msgEl.style.background = '#d32f2f';
+        msgEl.style.border = 'none';
         return;
       }
+      if(email && emailValue){
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!emailRegex.test(emailValue)){
+          msgEl.textContent = 'Por favor ingresa un correo electrónico válido.';
+          msgEl.style.color = '#fff';
+          msgEl.style.background = '#d32f2f';
+          msgEl.style.border = 'none';
+          return;
+        }
+      }
       // Normally here you'd post to a server. We'll simulate success.
-      msgEl.textContent = 'Gracias, tu mensaje fue enviado. Nos comunicaremos pronto.';
+      msgEl.textContent = '¡Gracias! Tu mensaje fue enviado correctamente. Nos comunicaremos contigo pronto.';
       msgEl.style.color = '#fff';
       msgEl.style.background = '#4b0f37';
+      msgEl.style.border = 'none';
       form.reset();
     });
   }
