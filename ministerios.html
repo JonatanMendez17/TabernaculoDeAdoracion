@@ -22,13 +22,6 @@
   <meta property="og:locale" content="es_LA">
   <meta property="og:site_name" content="Tabernáculo de Adoración">
   
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://tabernaculodeadoracion.com/ministerios.html">
-  <meta property="twitter:title" content="Ministerios - Tabernáculo de Adoración | Santa Fe, Argentina">
-  <meta property="twitter:description" content="Conoce nuestros ministerios: Escuela Ministerial Esencia, Asociación Civil y Escuela de Entrenamiento Juniors. Trabajamos en base a los cinco ministerios.">
-  <meta property="twitter:image" content="https://tabernaculodeadoracion.com/Imagenes/ministerios.jpg">
-  
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="Imagenes/Logo_TDA.png">
   <link rel="apple-touch-icon" href="Imagenes/Logo_TDA.png">
@@ -73,39 +66,8 @@
     <section class="container ministries-list">
       <h2 class="ministerios-title">NUESTROS MINISTERIOS</h2>
       
-      <div class="ministries-detailed">
-        <article class="ministry-card">
-          <div class="ministry-image">
-            <img src="Imagenes/esencia.jpg" alt="Escuela Ministerial Esencia" loading="lazy">
-          </div>
-          <div class="ministry-content">
-            <h3>Escuela Ministerial Esencia</h3>
-            <p class="ministry-description">La Escuela Ministerial Esencia es un espacio de formación y equipamiento integral para líderes y servidores que desean profundizar en su llamado y desarrollar sus dones ministeriales. A través de un programa estructurado, brindamos herramientas prácticas y fundamentos bíblicos sólidos para el servicio efectivo en el Reino de Dios.</p>
-            <p class="ministry-details">Nuestro enfoque incluye formación en liderazgo, adoración, intercesión y servicio comunitario, preparando a los participantes para impactar sus comunidades con excelencia y pasión por el propósito divino.</p>
-          </div>
-        </article>
-
-        <article class="ministry-card">
-          <div class="ministry-image">
-            <img src="Imagenes/asociacion.jpg" alt="Asociación Civil" loading="lazy">
-          </div>
-          <div class="ministry-content">
-            <h3>Asociación Civil</h3>
-            <p class="ministry-description">La Asociación Civil es nuestro brazo de acción social, comprometido con el bienestar de las familias y comunidades más vulnerables. Trabajamos activamente para brindar apoyo, recursos y acompañamiento a quienes más lo necesitan, reflejando el amor de Cristo a través de acciones concretas.</p>
-            <p class="ministry-details">Desarrollamos programas de ayuda alimentaria, asistencia social, acompañamiento familiar y proyectos comunitarios que buscan transformar vidas y construir un futuro mejor para nuestra comunidad.</p>
-          </div>
-        </article>
-
-        <article class="ministry-card">
-          <div class="ministry-image">
-            <img src="Imagenes/junior.jpg" alt="Escuela de Entrenamiento Juniors" loading="lazy">
-          </div>
-          <div class="ministry-content">
-            <h3>Escuela de Entrenamiento Juniors</h3>
-            <p class="ministry-description">La Escuela de Entrenamiento Juniors está diseñada específicamente para jóvenes que desean crecer en su fe y desarrollar su potencial ministerial. Ofrecemos un ambiente seguro y dinámico donde los jóvenes pueden explorar sus dones, fortalecer su identidad en Cristo y prepararse para ser líderes del futuro.</p>
-            <p class="ministry-details">A través de actividades prácticas, enseñanza bíblica relevante y mentoría personalizada, equipamos a la próxima generación para que sean agentes de cambio en sus escuelas, familias y comunidades.</p>
-          </div>
-        </article>
+      <div class="ministries-detailed" id="ministriesDetailed">
+        <!-- Los ministerios se cargan dinámicamente desde js/modules/ministries.js -->
       </div>
     </section>
   </main>
@@ -165,9 +127,10 @@
   </footer>
 
   <!-- JavaScript Modules -->
+  <script src="js/dataconfig.js"></script>
   <script src="js/modules/backgrounds.js"></script>
   <script src="js/modules/header.js"></script>
-  <script src="js/modules/forms.js"></script>
+  <script src="js/modules/ministries.js"></script>
 </body>
 </html>
 

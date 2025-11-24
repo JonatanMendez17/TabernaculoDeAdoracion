@@ -18,8 +18,7 @@ TDA/
 │   │   ├── _components.css   # Componentes reutilizables (botones, cards, forms)
 │   │   ├── _sections.css    # Secciones de página (about, construction, events, etc.)
 │   │   └── _responsive.css  # Media queries y estilos responsive
-│   ├── styles.css      # (Legacy - mantener por compatibilidad)
-│   └── sobre.css       # Estilos específicos de la página "Nosotros"
+│   └── [todos los estilos están en modules/]
 ├── js/
 │   ├── main.js         # Archivo principal (placeholder)
 │   ├── modules/        # Módulos JavaScript organizados
@@ -28,7 +27,7 @@ TDA/
 │   │   ├── events.js        # Carga dinámica de eventos
 │   │   ├── forms.js         # Manejo de formularios
 │   │   └── components.js    # Carga dinámica de componentes HTML
-│   └── scripts.js      # (Legacy - mantener por compatibilidad)
+│   └── [todos los scripts están en modules/]
 └── [páginas HTML]
 ```
 
@@ -68,6 +67,7 @@ Secciones específicas de página:
 - Ministries
 - Donate CTA
 - Contact
+- Nosotros (Historia, Misión/Visión, Valores, etc.)
 
 ### `_responsive.css`
 Todas las media queries organizadas por breakpoint:
@@ -100,10 +100,11 @@ Maneja el formulario de contacto:
 - Validación de email
 - Mensajes de éxito/error
 
-### `components.js`
-Carga componentes HTML dinámicamente (opcional):
-- Carga header desde `components/header.html`
-- Carga footer desde `components/footer.html`
+### `ministries.js`
+Carga dinámicamente los ministerios:
+- Define el array `ministriesData` con los ministerios
+- Renderiza ministerios en `index.html` (versión simple)
+- Renderiza ministerios en `ministerios.html` (versión detallada)
 
 ## 🔧 Uso
 
@@ -116,11 +117,14 @@ Carga componentes HTML dinámicamente (opcional):
 
 **JavaScript:**
 ```html
-<!-- Cargar módulos necesarios -->
+<!-- Módulos comunes (todas las páginas) -->
 <script src="js/modules/backgrounds.js"></script>
 <script src="js/modules/header.js"></script>
-<script src="js/modules/events.js"></script>  <!-- Solo en index.html -->
-<script src="js/modules/forms.js"></script>   <!-- Solo en contacto.html -->
+
+<!-- Módulos específicos por página -->
+<script src="js/modules/events.js"></script>      <!-- Solo en index.html -->
+<script src="js/modules/ministries.js"></script>  <!-- Solo en index.html y ministerios.html -->
+<script src="js/modules/forms.js"></script>       <!-- Solo en contacto.html -->
 ```
 
 ## ✨ Ventajas de la Modularización
@@ -134,10 +138,11 @@ Carga componentes HTML dinámicamente (opcional):
 
 ## 📝 Notas
 
-- Los archivos legacy (`styles.css`, `scripts.js`) se mantienen por compatibilidad
+- **Optimización:** Todos los archivos legacy han sido eliminados
 - Los módulos JavaScript son auto-inicializables (IIFE)
 - Los módulos CSS usan `@import` en `main.css`
-- Los componentes HTML están disponibles pero no se cargan automáticamente (se mantiene HTML inline)
+- Cada página carga solo los módulos JavaScript necesarios
+- Los estilos de la página "Nosotros" están integrados en los módulos CSS
 
 ## 🚀 Próximos Pasos (Opcional)
 

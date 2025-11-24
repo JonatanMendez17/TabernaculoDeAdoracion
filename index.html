@@ -23,13 +23,6 @@
   <meta property="og:locale" content="es_LA">
   <meta property="og:site_name" content="Tabernáculo de Adoración">
   
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://tabernaculodeadoracion.com/">
-  <meta property="twitter:title" content="Tabernáculo de Adoración - Casa de Oración | Santa Fe, Argentina">
-  <meta property="twitter:description" content="Casa de oración en Santa Fe, Argentina. Cultivamos la gloria celestial por medio de adoración e intercesión continua.">
-  <meta property="twitter:image" content="https://tabernaculodeadoracion.com/Imagenes/Logo_TDA.png">
-  
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="Imagenes/Logo_TDA.png">
   <link rel="apple-touch-icon" href="Imagenes/Logo_TDA.png">
@@ -79,7 +72,7 @@
         </div>
         <div class="about-text">
           <p>El Tabernáculo de Adoración nace con el propósito de crear un ambiente de gloria por medio de la Adoración e Intercesión continua, hasta que se manifieste el Reino de Dios y su voluntad se establezca en la tierra, así como lo es en el cielo.</p>
-          <a class="btn-read-more" href="nosotros.html">Más información</a>
+          <a class="btn btn--dark" href="nosotros.html">Más información</a>
         </div>
       </div>
     </section>
@@ -113,7 +106,7 @@
               <p class="construction-description">En Santa Fe, se levanta la Casa de Oración, un proyecto que busca unir a la comunidad en torno a valores de fe y solidaridad, promoviendo la paz espiritual y el respeto en la diversidad.</p>
               <div class="construction-cta-text">
                 <p>Desde aquí puedes realizar tu colaboración</p>
-                <a class="btn-construction" href="contacto.html#donar">COLABORAR</a>
+                <a class="btn btn--white" href="contacto.html#donar">COLABORAR</a>
               </div>
             </div>
 
@@ -152,22 +145,8 @@
     <section class="ministries container">
       <h2 class="ministerios-title">MINISTERIOS</h2>
 
-      <div class="cards">
-        <article class="card">
-          <img src="Imagenes/esencia.jpg" alt="Esencia" loading="lazy">
-          <h3>Escuela Ministerial Esencia</h3>
-          <p>Formación y equipamiento para líderes y servidores.</p>
-        </article>
-        <article class="card">
-          <img src="Imagenes/asociacion.jpg" alt="Asociación Civil" loading="lazy">
-          <h3>Asociación Civil</h3>
-          <p>Apoyo a familias con necesidades en la comunidad.</p>
-        </article>
-        <article class="card">
-          <img src="Imagenes/junior.jpg" alt="Escuela de entrenamiento juniors" loading="lazy">
-          <h3>Escuela de entrenamiento juniors</h3>
-          <p>Formación y equipamiento para jóvenes.</p>
-        </article>
+      <div class="cards" id="ministriesCards">
+        <!-- Los ministerios se cargan dinámicamente desde js/modules/ministries.js -->
       </div>
       <div class="center"><a class="btn" href="ministerios.html">Ver todos los ministerios</a></div>
     </section>
@@ -178,7 +157,7 @@
         <div class="donate-content">
           <h2 class="donate-title">Ayudanos a recaudar para nuestras causas humanitarias</h2>
           <p class="donate-description">Contribuye con una ofrenda y sé parte del impacto. Tu generosidad transforma vidas y construye un futuro mejor para nuestra comunidad.</p>
-          <a class="btn-donate" href="contacto.html#donar">Donar</a>
+          <a class="btn btn--white" href="contacto.html#donar">Donar</a>
         </div>
       </div>
     </section>
@@ -240,9 +219,10 @@
   </footer>
 
   <!-- JavaScript Modules -->
+  <script src="js/dataconfig.js"></script>
   <script src="js/modules/backgrounds.js"></script>
   <script src="js/modules/header.js"></script>
   <script src="js/modules/events.js"></script>
-  <script src="js/modules/forms.js"></script>
+  <script src="js/modules/ministries.js"></script>
 </body>
 </html>
