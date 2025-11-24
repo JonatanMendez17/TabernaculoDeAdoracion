@@ -24,33 +24,7 @@
     margin:0 auto;
   }
   
-  /* Header */
-  .site-header{
-    background: linear-gradient(90deg,var(--purple-1),var(--purple-2));
-    color:#fff;
-    position:sticky;
-    top:0;
-    z-index:40;
-    box-shadow:0 2px 8px rgba(0,0,0,0.15);
-  }
-  .header-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:1rem;
-    padding:12px 4%;
-    max-width:var(--max-width);
-    margin:0 auto;
-  }
-  .logo img{height:44px; display:block;}
-  .main-nav{display:flex;gap:18px;align-items:center}
-  .main-nav a{
-    color:rgba(255,255,255,0.95);
-    text-decoration:none;
-    font-weight:600;
-    font-size:0.95rem;
-    letter-spacing:0.06em;
-  }
+  /* Header - Usa los estilos de styles.css */
   .socials a{
     display:inline-block;
     background:rgba(255,255,255,0.12);
@@ -68,7 +42,6 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    background-image: url('images/hero.jpg');
     background-size:cover;
     background-position:center;
     color:#fff;
@@ -237,7 +210,7 @@
     .historia-image img{ width:60%; margin-bottom:18px; }
     .llama-text{ text-align:center; margin-left:0; padding:40px 15px; }
     .footer-grid{ flex-direction:column; align-items:center; text-align:center; gap:14px; }
-    .main-nav{ display:none; } /* simplifica en móvil */
+    /* Header responsive - Usa los estilos de styles.css */
   }
   @media (max-width:480px){
     .hero-title{ font-size:3rem; -webkit-text-stroke:1.2px; text-align:center; }
